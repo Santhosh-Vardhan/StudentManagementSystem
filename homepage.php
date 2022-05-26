@@ -3,12 +3,12 @@
 
   if (!isset($_SESSION['username'])) {
   	$_SESSION['msg'] = "You must log in first";
-  	header('location: login.php');
+  	header('location: ANISLogin.php');
   }
   if (isset($_GET['logout'])) {
   	session_destroy();
   	unset($_SESSION['username']);
-  	header("location: login.php");
+  	header("location: ANISLogin.php");
   }
 ?>
 
@@ -38,18 +38,35 @@
         <!-- <li><a href="#"></a></li>
         <li><a href="#"></a></li>
         <li><a href="#"></a></li> -->
+        <li><p>Hello world</p><li>
         <li><a href="aboutUs.html" >About us</a></li> 
         <li><a href="contactus.html">Contact us</a></li>
+        <!--
+        <form action="homepage.php" method="get">
+        <li>
+        <button name="logout" class="mx-3 my-0 btn btn-outline-light btn- btn-dark">Logout</button>  
+      </li>
+        </form> -->
       </ul>
     </div>
   </nav>
   <div class="img"></div>
   <div class="center">
     <div class="title">
-      Welcome to ANIS<br><br>A dedicated platform for the students of ANITS<br><br>
+      Welcome to ANIS, <?php echo $_SESSION['username']; ?><br><br>A dedicated platform for the students of ANITS<br><br>
       <div class="btns">
+      
         <button onClick='window.location="#hpfoot"'>Know More</button>
-        <button onClick='window.location="#depts"' >Depts</button>
+        <button onClick='window.location="#depts"' >Depts</button><span>
+        <form action="homepage.php" method="get" style="display:inline;">  
+        <button name="logout"  >Logout</button>  
+</span>
+</form>
+        <!--
+    <form method="get" action="homepage.php">
+    <button name="logout" >Logout</button>  
+    </form>
+-->
     </div>
     <div class="sub_title"></div>
     </div> 

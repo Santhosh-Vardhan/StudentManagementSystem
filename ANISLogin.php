@@ -27,7 +27,7 @@
 			<?php include('errors.php'); ?>
 				<form method="post" action="ANISLogin.php">
 					<label for="chk" aria-hidden="true">Login</label>
-					<input type="text" name="username" placeholder="Email" required="">
+					<input type="text" name="username" placeholder="Username" required="">
 					<input type="password" name="password" placeholder="Password" required="">
 					<!--<button>Login</button>-->
 					<button type="submit" class="btn" name="login_user">Login</button>
